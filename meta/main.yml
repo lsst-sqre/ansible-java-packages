@@ -24,4 +24,5 @@ galaxy_info:
   galaxy_tags:
     - java
     - jvm
+  version: 0.1.0
 dependencies: []
