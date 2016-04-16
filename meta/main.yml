@@ -22,7 +22,7 @@ galaxy_info:
   #  - squeeze
   #  - wheezy
   galaxy_tags:
+    - system
     - java
     - jvm
-  version: 0.1.0
 dependencies: []
