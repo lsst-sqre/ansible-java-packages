@@ -12,6 +12,14 @@ Example Playbook
       roles:
          - { role: jmatt.java-packages }
 
+
+Variables
+---------
+
+`java_packages_use_headless` The default is `yes`. Use the headless JRE package.
+
+`java_packages_use_jdk` The default is `no`. Use the JDK package. Not compatible with `java_packages_use_headless`.
+
 License
 -------
 
