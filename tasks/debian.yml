@@ -2,7 +2,12 @@
 # Install java packages on debian based distributions.
 
 - name: Install openjdk repo.
-  apt_repository: repo='ppa:openjdk-r/ppa'
+  apt_repository:
+    repo: "ppa:openjdk-r/ppa"
 
 - name: Install the openjdk 1.8 package.
-  apt: name=openjdk-8-jdk state=latest update_cache=yes install_recommends=no
+  apt:
+    name: "{{ java_packages_packagename }}{{ java_packages_headless }}"
+    state: latest
+    update_cache: yes
+    install_recommends: no

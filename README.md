@@ -12,7 +12,15 @@ Example Playbook
       roles:
          - { role: lsst-sqre.java-packages }
 
+
+Variables
+---------
+
+`java_packages_use_headless` The default is `yes`. Use the headless JRE package.
+
+`java_packages_use_jdk` The default is `no`. Use the JDK package. Not compatible with `java_packages_use_headless`.
+
 License
 -------
 
-See the [LICENSE file](/LICENSE).
+The MIT License. See the [LICENSE file](https://github.com/lsst-sqre/ansible-java-packages/blob/master/LICENSE).
