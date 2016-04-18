@@ -5,4 +5,7 @@
   yum: name=epel-release state=present
 
 - name: Install the openjdk 1.8 package.
-  yum: name=java-1.8.0-openjdk-headless.x86_64 state=installed
+  yum:
+    name: "{{ java_packages_packagename }}{{ java_packages_headless }}.x86_64"
+    state: installed
+
