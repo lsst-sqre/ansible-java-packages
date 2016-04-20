@@ -1,8 +1,29 @@
 ---
 # tasks file for java-packages
 
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- set_fact:
+    java_packages_packagename: "{{ java_packages_dist_packagename }}"
+
+- set_fact:
+    java_packages_headless: "-headless"
+  when: java_packages_use_headless
+
+# Update package name if installing the jdk.
+- set_fact:
+    java_packages_packagename: "openjdk-8-jdk"
+  when: java_packages_use_jdk and ansible_os_family == "Debian"
+
+- set_fact:
+    java_packages_packagename: "{{ java_packages_dist_packagename }}-devel"
+  when: java_packages_use_jdk and ansible_os_family == "RedHat"
+
+- fail: msg="The headless package is not available with the JDK, only the JRE."
+  when: java_packages_use_jdk and java_packages_use_headless
+
 - include: redhat.yml
-  when: ansible_os_family == 'RedHat'
+  when: ansible_os_family == "RedHat"
 
 - include: debian.yml
-  when: ansible_os_family == 'Debian'
+  when: ansible_os_family == "Debian"

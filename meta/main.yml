@@ -13,16 +13,10 @@ galaxy_info:
     versions:
       - trusty
       - xenial
-  #- name: Debian
-  #  versions:
-  #  - all
-  #  - etch
-  #  - jessie
-  #  - lenny
-  #  - squeeze
-  #  - wheezy
   galaxy_tags:
     - system
     - java
     - jvm
+    - centos
+    - ubuntu
 dependencies: []
